@@ -5,7 +5,7 @@ import tensorflow as tf
 from sklearn.model_selection import train_test_split
 
 
-st.header("ML Forecasting App")
+st.header("Kp Index Forecasting Model")
 
 # Load dataset and model
 data = pd.read_csv("Final_Data_for_Model_training.csv")
