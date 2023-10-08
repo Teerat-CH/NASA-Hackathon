@@ -23,18 +23,19 @@ if st.checkbox('Show Dataset'):
 
 st.subheader("Please input relevant features for forecasting!")
 
-# Allow the user to select a time from the slider
-selected_time_index = st.slider('Select Time', 0, len(X_test) - 1, 0)  # Assuming X_test is available
+# Allow the user to select a date
+selected_date = st.selectbox('Select Date', test_dates)
+selected_time_index = np.where(test_dates == selected_date)[0][0]
 
 if st.button('Make Prediction'):
-    # Get the features corresponding to the selected time
-    selected_features = X_test[selected_time_index].reshape(1, -1, 1)
+    # Get the features corresponding to the selected date
+    selected_features = X_test_features[selected_time_index].reshape(1, -1, 1)
 
     # Predict using the LSTM model
     prediction = model.predict(selected_features)
 
     # Display the specific KP prediction for the selected time
-    st.write(f"Predicted KP Index for selected time is: {prediction[0][0]:.2f}")
+    st.write(f"Predicted KP Index for {selected_date} is: {prediction[0][0]:.2f}")
 
     st.write(f"Thank you! I hope you found this useful.")
 
