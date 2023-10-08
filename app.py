@@ -36,12 +36,12 @@ if st.button('Make Prediction'):
     # Display the specific KP prediction for the selected time
     st.write(f"Predicted KP Index for selected time is: {prediction[0][0]:.2f}")
 
-    # Display the graph
-    y_pred_all = model.predict(X_test_reshaped)  # Assuming X_test_reshaped is available
-    chart_data = pd.DataFrame({
-        'Real KP Values': y_test,  # Assuming y_test is globally available
-        'Predicted KP Values': y_pred_all.flatten()
-    })
-    st.line_chart(chart_data)
+    st.write(f"Thank you! I hope you found this useful.")
 
-    st.write(f"Thank you {st.session_state.name}! I hope you found this useful.")
+# Display the graph
+y_pred_all = model.predict(X_test_reshaped)  # Assuming X_test_reshaped is available
+chart_data = pd.DataFrame({
+    'Real KP Values': y_test,  # Assuming y_test is globally available
+    'Predicted KP Values': y_pred_all.flatten()
+})
+st.line_chart(chart_data)
