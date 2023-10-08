@@ -8,7 +8,7 @@ st.header("ML Forecasting App")
 st.text_input("Enter your Name: ", key="name")
 
 # Load dataset and model
-data = pd.read_csv("C:/Users/Ibrah/PycharmProjects/flaskProject/Final_Data_for_Model_training.csv")
+data = pd.read_csv("Final_Data_for_Model_training.csv")
 data['Timestamp'] = pd.to_datetime(data['Timestamp']).dt.date  # Convert to date
 
 model = tf.keras.models.load_model('DSCOVR')
