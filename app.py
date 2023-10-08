@@ -41,9 +41,9 @@ if st.button('Make Prediction'):
     st.write(f"Thank you {st.session_state.name}! I hope you found this useful.")
 
 # Display the graph
-    y_pred_all = model.predict(X_test_reshaped)  # Assuming X_test_reshaped is available
-    chart_data = pd.DataFrame({
-        'Real KP Values': y_test,  # Assuming y_test is globally available
-        'Predicted KP Values': y_pred_all.flatten()
-    })
-    st.line_chart(chart_data)
+y_pred_all = model.predict(X_test_reshaped)  # Assuming X_test_reshaped is available
+chart_data = pd.DataFrame({
+    'Real KP Values': y_test,  # Assuming y_test is globally available
+    'Predicted KP Values': y_pred_all.flatten()
+})
+st.line_chart(chart_data)
