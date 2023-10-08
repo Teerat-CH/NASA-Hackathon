@@ -4,8 +4,7 @@ import numpy as np
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
 
-st.header("ML Forecasting App")
-st.text_input("Enter your Name: ", key="name")
+st.header("Kp Index Forecasting Model")
 
 # Load dataset and model
 data = pd.read_csv("Final_Data_for_Model_training.csv")
@@ -47,7 +46,8 @@ if st.button('Make Prediction'):
     # Display the specific KP prediction for the selected time
     st.write(f"Predicted KP Index for {selected_date} is: {prediction[0][0]:.2f}")
 
-    st.write(f"Thank you {st.session_state.name}! I hope you found this useful.")
+    st.write(f"Thank you! I hope you found this useful.")
+    st.write(f"Even though our current app can only forecast historical data, we are determined to connect to data in the future to predict real-time Kp index!")
 
     
 # Display the graph
