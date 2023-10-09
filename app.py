@@ -47,7 +47,7 @@ if st.button('Make Prediction'):
     st.write(f"Predicted KP Index for {selected_date} is: {prediction[0][0]:.2f}")
 
     st.write(f"Thank you! I hope you found this useful.")
-    st.write(f"Even though our current app can only forecast historical data, we are determined to connect to data in the future to predict real-time Kp index!")
+    st.write(f"Even though our current app can only forecast historical data, we are determined to connect to data source in the future to predict real-time Kp index!")
 
     
 # Display the graph
